@@ -5,12 +5,8 @@ const ErrorResponse = require("../utils/errorResponse");
 // @access    Public
 
 exports.uploadImage = (req, res, next) => {
-	const file = req.files.file;
-	res.status(200).json({
-     		success: true,
-			url: 'hello working ' + file.name
-   	 	}); 
-	/*if (!req.files)
+	const file = req.files.file;	
+	if (!req.files)
 	{
 		return next(new ErrorResponse(`Please upload a image`, 400));
 	}
@@ -20,14 +16,13 @@ exports.uploadImage = (req, res, next) => {
     	return next(new ErrorResponse(`Please upload an valid images`, 400));
 	} 
 	
-	file.mv(`${process.env.FILE_UPLOAD_PATH}/${file.name}`, async (err) => {
+	file.mv(`${process.env.FILE_UPLOAD_PATH}/${file.name}`, (err) => {
 		if (err) {      
-		return next(new ErrorResponse(`Problem with file upload`, 500));
+			return next(new ErrorResponse(`Problem with file upload`, 500));
 		}
 		res.status(200).json({
      		success: true,
       		url: `${req.protocol}://${req.get('host')}/${process.env.FILE_UPLOAD_PATH}/${file.name}`
    	 	});   
   });  
-  */
 };
