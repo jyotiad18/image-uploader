@@ -4,8 +4,7 @@ const ErrorResponse = require("../utils/errorResponse");
 // @route     POST /api/upload
 // @access    Public
 
-exports.uploadImage = (req, res, next) => {
-	const file = req.files.file;	
+exports.uploadImage = (req, res, next) => {	
 	if (!req.files)
 	{
 		return next(new ErrorResponse(`Please upload a image`, 400));
@@ -17,7 +16,7 @@ exports.uploadImage = (req, res, next) => {
 	} 
 	
 	file.mv(`${process.env.FILE_UPLOAD_PATH}/${file.name}`, (err) => {
-		if (err) {      
+		if (err) {      			
 			return next(new ErrorResponse(`Problem with file upload`, 500));
 		}
 		res.status(200).json({
