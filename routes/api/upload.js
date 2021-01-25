@@ -5,8 +5,6 @@ const router = express.Router();
 // @route    POST api/upload
 // @desc     Upload image and retreive link
 // @access   Public
-router.route('/').post((req, res) => {
-	res.send('hello');
-});
+router.route('/').post(uploadImage);
 
 module.exports = router;

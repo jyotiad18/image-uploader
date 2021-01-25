@@ -5,11 +5,12 @@ const ErrorResponse = require("../utils/errorResponse");
 // @access    Public
 
 exports.uploadImage = (req, res, next) => {
+	const file = req.files.file;
 	res.status(200).json({
      		success: true,
-      		url: 'hello working'
+			url: 'hello working ' + file.name
    	 	}); 
-	if (!req.files)
+	/*if (!req.files)
 	{
 		return next(new ErrorResponse(`Please upload a image`, 400));
 	}
@@ -28,4 +29,5 @@ exports.uploadImage = (req, res, next) => {
       		url: `${req.protocol}://${req.get('host')}/${process.env.FILE_UPLOAD_PATH}/${file.name}`
    	 	});   
   });  
+  */
 };
