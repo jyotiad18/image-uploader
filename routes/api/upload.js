@@ -1,10 +1,10 @@
 const express = require('express');
 const { uploadImage } = require('../../controllers/upload');
-const router = express.Router({ mergeParams: true });
+const router = express.Router();
 
 // @route    POST api/upload
 // @desc     Upload image and retreive link
 // @access   Public
-router.route('/').post(uploadImage);
+router.route('/').post();
 
 module.exports = router;

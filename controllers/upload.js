@@ -5,6 +5,10 @@ const ErrorResponse = require("../utils/errorResponse");
 // @access    Public
 
 exports.uploadImage = (req, res, next) => {
+	res.status(200).json({
+     		success: true,
+      		url: 'hello working'
+   	 	}); 
 	if (!req.files)
 	{
 		return next(new ErrorResponse(`Please upload a image`, 400));

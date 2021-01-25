@@ -24,9 +24,6 @@ app.use(cors());
 // Define Routes
 app.use('/images', express.static(__dirname + '/images'));
 app.use('/api/upload', require('./routes/api/upload'));
-app.get('/api/test', (req, res, next) => {
-  res.send('Hello');
-});
 
 // Serve static assets in production
 if (process.env.NODE_ENV === 'production') {
