@@ -1,0 +1,35 @@
+.app {
+  padding: 100px 500px;
+  display: flex;
+  flex-direction: column;
+  height: 100hv;
+}
+
+.app__footer {
+  display: flex;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  color: #a9a9a9;
+  align-items: center;
+  justify-content: center;
+  margin-top: 140px;
+}
+
+@media (max-width: 1204px) {
+  .app {
+    padding: 100px 300px;
+  }
+}
+@media (max-width: 768px) {
+  .app {
+    padding: 50px 150px;
+  }
+}
+@media (max-width: 640px) {
+  .app {
+    padding: 10px;
+  }
+}
